@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nc_flutter_crypto/widgets/button.dart';
 
 void main() {
   runApp(App());
@@ -9,12 +10,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF181818),
+        backgroundColor: const Color(0xFF181818),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Row(
@@ -23,7 +25,7 @@ class App extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
+                      const Text(
                         "Hey, Selena",
                         style: TextStyle(
                           color: Colors.white,
@@ -40,6 +42,42 @@ class App extends StatelessWidget {
                       ),
                     ],
                   )
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Text(
+                'Total Balance',
+                style: TextStyle(
+                    color: Colors.white.withOpacity(0.8), fontSize: 22),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Text(
+                '\$5 194 482',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 48,
+                    fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Button(
+                    textColor: Colors.black,
+                    bgColor: Color(0xFFF2B33A),
+                    text: 'Transfer',
+                  ),
+                  Button(
+                    textColor: Colors.white,
+                    bgColor: Color(0xFF6C777E),
+                    text: 'Request',
+                  ),
                 ],
               )
             ],
